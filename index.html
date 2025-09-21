@@ -20,174 +20,39 @@
         }
 
         body {
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          min-height: 100vh;
-          background-color: var(--dark-color);
-          overflow: hidden;
-          perspective: 1000px;
-        }
-
-        .night {
-          position: fixed;
-          left: 50%;
-          top: 0;
-          transform: translateX(-50%);
-          width: 100%;
-          height: 100%;
-          filter: blur(0.1vmin);
-          background-image: radial-gradient(
-              ellipse at top,
-              transparent 0%,
-              var(--dark-color)
-            ),
-            radial-gradient(
-              ellipse at bottom,
-              var(--dark-color),
-              rgba(145, 233, 255, 0.2)
-            ),
-            repeating-linear-gradient(
-              220deg,
-              rgb(0, 0, 0) 0px,
-              rgb(0, 0, 0) 19px,
-              transparent 19px,
-              transparent 22px
-            ),
-            repeating-linear-gradient(
-              189deg,
-              rgb(0, 0, 0) 0px,
-              rgb(0, 0, 0) 19px,
-              transparent 19px,
-              transparent 22px
-            ),
-            repeating-linear-gradient(
-              148deg,
-              rgb(0, 0, 0) 0px,
-              rgb(0, 0, 0) 19px,
-              transparent 19px,
-              transparent 22px
-            ),
-            linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
-        }
-
-        .shooting-stars {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-          z-index: 1;
-        }
-
-        .shooting-star {
-          position: absolute;
-          width: 4px;
-          height: 4px;
-          background: #fff;
-          border-radius: 50%;
-          box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8);
-          opacity: 0;
-          animation: shootingStar 3s linear infinite;
-        }
-
-        .shooting-star::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: 0;
-          transform: translateY(-50%);
-          width: 0;
-          height: 2px;
-          background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
-          animation: shootingStarTail 3s linear infinite;
-        }
-
-        .shooting-star:nth-child(1) {
-          top: 5%;
-          left: -10%;
-          animation-delay: 0s;
-          animation-duration: 2.5s;
-        }
-
-        .shooting-star:nth-child(2) {
-          top: 15%;
-          left: -10%;
-          animation-delay: 2s;
-          animation-duration: 3s;
-        }
-
-        .shooting-star:nth-child(3) {
-          top: 25%;
-          left: -10%;
-          animation-delay: 4s;
-          animation-duration: 2.8s;
-        }
-
-        .shooting-star:nth-child(4) {
-          top: 0%;
-          left: -10%;
-          animation-delay: 6s;
-          animation-duration: 3.2s;
-        }
-
-        .shooting-star:nth-child(5) {
-          top: 35%;
-          left: -10%;
-          animation-delay: 8s;
-          animation-duration: 2.7s;
-        }
-
-        .shooting-star:nth-child(6) {
-          top: 8%;
-          left: -10%;
-          animation-delay: 10s;
-          animation-duration: 3.1s;
-        }
-
-        .shooting-star:nth-child(7) {
-          top: 45%;
-          left: -10%;
-          animation-delay: 12s;
-          animation-duration: 2.9s;
-        }
-
-        .shooting-star:nth-child(8) {
-          top: 3%;
-          left: -10%;
-          animation-delay: 14s;
-          animation-duration: 3.3s;
-        }
-
-        @keyframes shootingStar {
-          0% {
-            opacity: 0;
-            transform: translateX(0) translateY(0) rotate(45deg);
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 0;
-            transform: translateX(120vw) translateY(50vh) rotate(10deg);
-          }
-        }
-
-        @keyframes shootingStarTail {
-          0% {
-            width: 0;
-          }
-          30% {
-            width: 100px;
-          }
-          100% {
-            width: 0;
-          }
-        }
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to top, #aeefff 0%, #e0f7fa 100%);
+    overflow: hidden;
+    perspective: 1000px;
+  }  
+  .cloud {
+    position: absolute;
+    background: #fff;
+    opacity: 0.8;
+    z-index: 0;
+    filter: blur(1px);
+  }
+  .cloud-group {
+    position: absolute;
+    z-index: 0;
+  }
+   .cloud-a { width: 80px; height: 40px; top: 8%; left: 10%; border-radius: 40px; }
+  .cloud-b { width: 60px; height: 30px; top: 10%; left: 15%; border-radius: 30px; }
+  .cloud-c { width: 100px; height: 50px; top: 12%; left: 13%; border-radius: 50px; }
+  .cloud-d { width: 70px; height: 35px; top: 18%; left: 60%; border-radius: 35px; }
+  .cloud-e { width: 50px; height: 25px; top: 20%; left: 65%; border-radius: 25px; }
+  .cloud-f { width: 90px; height: 45px; top: 22%; left: 62%; border-radius: 45px; }
+  .cloud-g { width: 110px; height: 55px; top: 28%; left: 35%; border-radius: 55px; }
+  .cloud-h { width: 60px; height: 30px; top: 30%; left: 38%; border-radius: 30px; }
+  .cloud-i { width: 80px; height: 40px; top: 32%; left: 33%; border-radius: 40px; }
+  .cloud-j { width: 120px; height: 60px; top: 15%; left: 75%; border-radius: 60px; }
+  .cloud-k { width: 70px; height: 35px; top: 17%; left: 80%; border-radius: 35px; }
+  .cloud-l { width: 100px; height: 50px; top: 19%; left: 78%; border-radius: 50px; }
+  .cloud-m { width: 60px; height: 30px; top: 25%; left: 80%; border-radius: 30px; }
+  .cloud-n { width: 90px; height: 45px; top: 27%; left: 82%; border-radius: 45px; }
 
         .flowers {
           position: relative;
@@ -919,21 +784,31 @@
     </style>
 </head>
 <body class="not-loaded">
-  <div class="night"></div>
+  
+   <div class="cloud-group">
+    <div class="cloud cloud-a"></div>
+    <div class="cloud cloud-b"></div>
+    <div class="cloud cloud-c"></div>
+  </div>
+  <div class="cloud-group">
+    <div class="cloud cloud-d"></div>
+    <div class="cloud cloud-e"></div>
+    <div class="cloud cloud-f"></div>
+  </div>
+  <div class="cloud-group">
+    <div class="cloud cloud-g"></div>
+    <div class="cloud cloud-h"></div>
+    <div class="cloud cloud-i"></div>
+  </div>
+    <div class="cloud-group">
+    <div class="cloud cloud-j"></div>
+    <div class="cloud cloud-k"></div>
+    <div class="cloud cloud-l"></div>
+    <div class="cloud cloud-m"></div>
+    <div class="cloud cloud-n"></div>
+  </div>
   
   <div class="special-text">Te regalo flores amarillas, un pedacito de yo para tu 💗</div>
-  
-
-  <div class="shooting-stars">
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-    <div class="shooting-star"></div>
-  </div>
   
   <div class="flowers">
     <div class="flower flower--1">
